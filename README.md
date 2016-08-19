@@ -1,5 +1,14 @@
-# mysqli
+# MYSQLi
 MYSQLi extension library
+
+### 0. Установка
+```
+composer require ova777\mysqli
+```
+После этого подключаем composer autoloader
+```php
+require_once __DIR__.'/vendor/autoload.php';
+```
 
 ### 1. Подключение к БД
 ```php
