@@ -8,9 +8,13 @@ $db = new \ova777\MYSQLi\Connection('localhost', 'user', 'password', 'database')
 
 ### 2. Запросы на получение данных
 ```php
+//Все строки результата в виде массива ассоциативных массивов
 $rows = $db->command('SELECT * FROM table')->queryAll();
+//Первую строка результата в виде ассоциативного массива
 $row = $db->command('SELECT * FROM table')->queryRow();
+//Данные первой колонки результата
 $column = $db->command('SELECT * FROM table')->queryColumn();
+//Первый столбец первой колонки
 $value = $db->command('SELECT * FROM table')->queryScalar();
 ```
 
@@ -36,7 +40,9 @@ $db->command('INSERT INTO table SET int_col=?, str_col=?')
 
 ### 5. Повторное использование подготовленных запросов
 ```php
+//Полготавливаем запрос
 $cmd = $db->command('INSERT INTO table SET a=?,b=?');
+//Выполняем запросы
 $cmd->bind('is', array(1, 'foo'))->execute();
 $cmd->bind('is', array(2, 'bar'))->execute();
 //При повторном вызове bind можно не передавать типы значений
