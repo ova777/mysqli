@@ -3,7 +3,7 @@ MYSQLi extension library
 
 ### 0. Установка
 ```
-composer require ova777\mysqli
+composer require ova777/mysqli
 ```
 После этого подключаем composer autoloader
 ```php
