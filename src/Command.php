@@ -16,12 +16,18 @@ class Command {
 	private $vars;
 
 	/**
+	 * @var Connection
+	 */
+	private $connection;
+
+	/**
 	 * Command constructor.
-	 * @param \mysqli $dbh
+	 * @param Connection $connection
 	 * @param string $sql
 	 */
-	public function __construct($dbh, $sql) {
-		$this->prepare = $dbh->prepare($sql);
+	public function __construct($connection, $sql) {
+		$this->connection = $connection;
+		$this->prepare = $this->connection->dbh->prepare($sql);
 	}
 
 	/**

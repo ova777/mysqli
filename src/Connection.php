@@ -25,6 +25,6 @@ class Connection {
 	 * @return Command
 	 */
 	public function command($sql) {
-		return new Command($this->dbh, $sql);
+		return new Command($this, $sql);
 	}
 }
